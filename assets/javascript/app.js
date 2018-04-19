@@ -83,6 +83,7 @@ $.ajax({
   characterImage.attr("src", results[i].images.downsized_still.url);
   characterImage.attr("data-still", results[i].images.downsized_still.url);
   characterImage.attr("data-animate", results[i].images.downsized.url);
+  characterImage.addClass("gif_img")
   characterImage.attr("data-state", "still");
     
 // append the gifs and ratings to div
@@ -90,8 +91,8 @@ $.ajax({
 };    
 });
 // // on click function on the GIF (all of them should be still) so the Gif's move
-$("#gifs").click(function(){
-
+$(document).on("click",".gif_img",function(){
+  
 var state = $(this).attr("data-state");
 
 if (state === "still") {
