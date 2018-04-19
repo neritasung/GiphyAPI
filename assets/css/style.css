@@ -1,0 +1,17 @@
+.buttons{
+    margin: 20px;
+    background-color: #5a6268;
+    border-color: #545b62;
+    padding: 10px;
+    color:#fff;
+    border-radius: 10%;   
+}
+.cards{
+    margin:20px;
+}
+.search{
+    float: right;
+}
+.input{
+    margin-left: 10px;
+}
