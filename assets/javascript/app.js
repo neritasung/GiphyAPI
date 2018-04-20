@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 // Global Variables
 var results= [];
-var character = ["Mickey Mouse","Winne The Pooh", "Olaf", "Peter Pan", "Sleepy", "Nemo", "Dumbo", "Aladdin","Mulan","Simba","Ariel", "Rapunzel","Merida", "Maleficent","Buzz Lightyear","Mr. Potato Head","Pocahontas","Genie"];
+var character = ["Mickey Mouse","Winne The Pooh", "Olaf", "Peter Pan", "Seven Dwarfs", "Nemo", "Dumbo", "Aladdin","Mulan","Simba","Ariel", "Rapunzel","Merida", "Maleficent","Buzz Lightyear","Mr. Potato Head","Pocahontas","Genie"];
 
 // clear out div
 $(".button").empty();
@@ -74,8 +74,10 @@ $.ajax({
     var results = response.data;
     for (var i=0; i<results.length; i++){
      console.log(results[i]);  
+     
 // append ratings to the gif
     var p = $("<p>").text("Rating: "+ results[i].rating);
+    p.addClass("ratings");
 
     
 // Setting the src attribute of the image to a property pulled off the result item
@@ -92,7 +94,7 @@ $.ajax({
 });
 // // on click function on the GIF (all of them should be still) so the Gif's move
 $(document).on("click",".gif_img",function(){
-  
+
 var state = $(this).attr("data-state");
 
 if (state === "still") {
